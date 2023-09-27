@@ -37,7 +37,7 @@ intents=json.loads(open('intents.json').read())
 words=pickle.load(open('words.pkl' , 'rb'))  
 clasess=pickle.load(open('classes.pkl' , 'rb')) 
 
-mod=load_model('chatbotm5.h5') 
+mod=load_model('chatbotm.h5') 
 
 
 def clean_sentence(sentence): 

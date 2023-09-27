@@ -109,7 +109,7 @@ model.predict(np.array(reshaped_array ))
 
 '''
 
-model.save("chatbotm5.h5") 
+#model.save("chatbotm.h5") 
 
 
 
