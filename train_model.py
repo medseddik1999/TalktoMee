@@ -77,11 +77,11 @@ train_y = list(training[:, 1])
   
 
 model=Sequential() 
-model.add(layers.Dense(400 , input_shape=(449,) , activation='relu' )) 
+model.add(layers.Dense(100 , input_shape=(449,) , activation='relu' )) 
 model.add(layers.Dropout(0.3)) 
-model.add(layers.Dense(200 , activation='relu' )) 
+model.add(layers.Dense(300 , activation='relu' )) 
 model.add(layers.Dropout(0.75))  
-model.add(layers.Dense(30 , activation='relu' )) 
+model.add(layers.Dense(100 , activation='relu' )) 
 model.add(layers.Dropout(0.5))  
 model.add(layers.Dense(16 , activation='softmax' )) 
 
@@ -109,7 +109,7 @@ model.predict(np.array(reshaped_array ))
 
 '''
 
-model.save("chatbotm.h5") 
+model.save("chatbotm2.h5") 
 
 
 
