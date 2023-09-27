@@ -10,7 +10,20 @@ import json
 import numpy as np
 from tensorflow.keras.models import load_model  
 import pickle 
-import nltk  
+import nltk   
+
+# Check if 'punkt' is installed
+if not nltk.download('punkt', quiet=True):
+    print("'punkt' is already installed.")
+else:
+    print("'punkt' has been successfully installed.")
+
+# Check if 'wordnet' is installed
+if not nltk.download('wordnet', quiet=True):
+    print("'wordnet' is already installed.")
+else:
+    print("'wordnet' has been successfully installed.")
+
 from  nltk.stem import WordNetLemmatizer  
 import random
 
