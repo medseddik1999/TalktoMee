@@ -37,7 +37,7 @@ intents=json.loads(open('intents.json').read())
 words=pickle.load(open('words.pkl' , 'rb'))  
 clasess=pickle.load(open('classes.pkl' , 'rb')) 
 
-mod=load_model('chatbotm2.h5') 
+mod=load_model('chatbotm3.h5') 
 
 
 def clean_sentence(sentence): 
@@ -89,9 +89,6 @@ def get_bot_response(sentence , jsonn):
 
 
 
-get_bot_response("what do you do ?" , intents)
-get_bot_response("You  traveling" , intents)
-get_bot_response("work experience" , intents)
 
 
 
