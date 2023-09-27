@@ -41,6 +41,7 @@ mod=load_model('chatbotm3.h5')
 
 
 def clean_sentence(sentence): 
+    sentence=sentence.lower()
     sentence_words=nltk.word_tokenize(sentence) 
     sentence_words=[lemmtizer.lemmatize(word) for word in sentence_words] 
     return sentence_words
