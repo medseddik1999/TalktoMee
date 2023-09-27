@@ -17,7 +17,7 @@ import numpy as np
 
 st.title("Talk To Me 🧑‍💼 💼 Beta version" ) 
 st.markdown("**This bot represents me, and you can ask it questions about my academic background, experience,  availability, and more.**")
-st.markdown('You can see more projects here: \n[Porjects](https://seddik1999abdm.netlify.app/]') 
+st.markdown('You can see more projects here: \n[Porjects](https://seddik1999abdm.netlify.app/)') 
 
 
 
