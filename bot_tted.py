@@ -60,7 +60,7 @@ def bag_of_words (sentence):
 
 def predict_class(sentence): 
     bow=bag_of_words(sentence) 
-    bow = np.array(bow).reshape((-1, (340,)[0]))    
+    bow = np.array(bow).reshape((-1, (309,)[0]))    
     res=mod.predict(np.array(bow))[0] 
     Erorr_TH= 0.083333333332  
     results=[[i,r] for i,r in enumerate(res) if r>Erorr_TH  ] 
@@ -90,6 +90,6 @@ def get_bot_response(sentence , jsonn):
 
 
 
-
+#get_bot_response("ah about your profile" , intents)   
 
 
