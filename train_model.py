@@ -76,13 +76,17 @@ train_y = list(training[:, 1])
   
 
 model=Sequential() 
-model.add(layers.Dense(300 , input_shape=(309,) , activation='relu' )) 
+model.add(layers.Dense(200 , input_shape=(3277,) , activation='relu' )) 
 model.add(layers.Dropout(0.6)) 
 model.add(layers.Dense(200 , activation='relu' )) 
-model.add(layers.Dropout(0.75))   
-model.add(layers.Dense(10 , activation='relu' ))   
-model.add(layers.Dropout(0.2)) 
-model.add(layers.Dense(16 , activation='softmax' )) 
+model.add(layers.Dropout(0.3))    
+model.add(layers.Dense(200 , activation='elu' ))   
+model.add(layers.Dropout(0.5))   
+model.add(layers.Dense(100 , activation='relu' ))   
+model.add(layers.Dropout(0.2))  
+model.add(layers.Dense(50, activation='relu' ))   
+model.add(layers.Dropout(0.7)) 
+model.add(layers.Dense(17, activation='softmax' )) 
 
 
 model.compile(optimizer='adam',  # You can choose a different optimizer
@@ -91,7 +95,7 @@ model.compile(optimizer='adam',  # You can choose a different optimizer
 
 
 
-model.fit(np.array(train_x),np.array(train_y), epochs=500, batch_size=15)  
+model.fit(np.array(train_x),np.array(train_y), epochs=1500, batch_size=1500)  
 
 #%% 
  
@@ -109,7 +113,7 @@ model.predict(np.array(reshaped_array ))
 
 '''
 
-#model.save("chatbotm.h5") 
+model.save("chatbotm1.h5") 
 
 
 

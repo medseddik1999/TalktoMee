@@ -37,7 +37,7 @@ intents=json.loads(open('intents.json').read())
 words=pickle.load(open('words.pkl' , 'rb'))  
 clasess=pickle.load(open('classes.pkl' , 'rb')) 
 
-mod=load_model('chatbotm.h5') 
+mod=load_model('chatbotm1.h5') 
 
 
 def clean_sentence(sentence): 
@@ -45,6 +45,7 @@ def clean_sentence(sentence):
     sentence_words=nltk.word_tokenize(sentence) 
     sentence_words=[lemmtizer.lemmatize(word) for word in sentence_words] 
     return sentence_words
+
 
 
 def bag_of_words (sentence):  
@@ -58,9 +59,10 @@ def bag_of_words (sentence):
 
 
 
+
 def predict_class(sentence): 
     bow=bag_of_words(sentence) 
-    bow = np.array(bow).reshape((-1, (309,)[0]))    
+    bow = np.array(bow).reshape((-1, (3277,)[0]))    
     res=mod.predict(np.array(bow))[0] 
     Erorr_TH= 0.083333333332  
     results=[[i,r] for i,r in enumerate(res) if r>Erorr_TH  ] 
@@ -72,6 +74,7 @@ def predict_class(sentence):
     return return_list 
 
    
+
 def get_response(pred, jsonn): 
     tag=pred[0]["intents"] 
     list_of_intents=jsonn["intents"] 
@@ -83,6 +86,7 @@ def get_response(pred, jsonn):
 
 
 
+
 def get_bot_response(sentence , jsonn): 
     pred=predict_class(sentence) 
     result=get_response(pred=pred, jsonn=jsonn) 
@@ -90,6 +94,6 @@ def get_bot_response(sentence , jsonn):
 
 
 
-#get_bot_response("ah about your profile" , intents)   
-
+get_bot_response("what is educational background" , intents)   
+predict_class("what is educational background" )  
 
