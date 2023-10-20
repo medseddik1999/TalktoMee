@@ -37,7 +37,7 @@ intents=json.loads(open('intents.json').read())
 words=pickle.load(open('words.pkl' , 'rb'))  
 clasess=pickle.load(open('classes.pkl' , 'rb')) 
 
-mod=load_model('chatbotm1.h5') 
+mod=load_model('chatbotm3.h5') 
 
 
 def clean_sentence(sentence): 
@@ -62,7 +62,7 @@ def bag_of_words (sentence):
 
 def predict_class(sentence): 
     bow=bag_of_words(sentence) 
-    bow = np.array(bow).reshape((-1, (3277,)[0]))    
+    bow = np.array(bow).reshape((-1, (691 ,)[0]))    
     res=mod.predict(np.array(bow))[0] 
     Erorr_TH= 0.083333333332  
     results=[[i,r] for i,r in enumerate(res) if r>Erorr_TH  ] 
@@ -93,7 +93,7 @@ def get_bot_response(sentence , jsonn):
     return(result)
 
 
-
-get_bot_response("what is educational background" , intents)   
-predict_class("what is educational background" )  
+#b='where did you have travel experiences'   
+#get_bot_response(b , intents)   
+#predict_class(b)    
 
